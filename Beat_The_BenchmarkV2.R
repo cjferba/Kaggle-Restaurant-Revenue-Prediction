@@ -61,12 +61,13 @@ res.bestglm <-bestglm(Xy = myData[1:n.train,-c(1,2)],
           IC = "AIC",                 # Information criteria for
           method = "exhaustive")
 
-glm( revenue~., family=binomial(link=probit),
+model2 <-glm( revenue~., family=binomial(link=probit),
      data = myData[1:n.train, c(important$finalDecision != "Rejected", TRUE)])
 
 
 #Make a Prediction
 prediction <- predict(model, myData[-c(1:n.train), ])
+prediction2 <- predict(model2, myData[-c(1:n.train), ])
 
 #Make Submission
 submit<-as.data.frame(cbind(seq(0, length(prediction) - 1, by=1), exp(prediction)))
