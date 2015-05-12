@@ -1,8 +1,8 @@
 library(Boruta)
 library(caret)
 
-train <- read.csv("train.csv")
-test  <- read.csv("test.csv")
+train <- read.csv("datos/train.csv")
+test  <- read.csv("datos/test.csv")
 names(test)<-names(train)[1:42]
 n.train <- nrow(train)
 

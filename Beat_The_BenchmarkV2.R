@@ -2,8 +2,8 @@ library(Boruta)
 library(caret)
 library(bestglm)
 
-train <- read.csv("train.csv")
-test  <- read.csv("test.csv")
+train <- read.csv("datos/train.csv")
+test  <- read.csv("datos/test.csv")
 names(test)<-names(train[,-dim(train)[2]])
 train<-train[,-1]
 test<-test[,-1]
